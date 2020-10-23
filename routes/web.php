@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/data-seeding', 'DataSeedingController@index');
+Route::get('/pets/{id}', 'PetController@show');
+Route::get('/pets', 'PetController@index');
