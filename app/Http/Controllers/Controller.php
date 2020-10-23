@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
+use App\Models\Pets;
 
-class Controller extends BaseController
+
+class Pets extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    //
+    public function index(){
+        $bookshops = Pets::get();
+        return view('pets/index', compact('bookshops'));
+    }
+    public function create(){
+        return view('pets/create');
+    }
+
 }
