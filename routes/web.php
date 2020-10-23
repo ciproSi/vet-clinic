@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/data-seeding', 'DataSeedingController@index');
+Route::get('/owners', 'OwnerController@index');
+
+Route::get('/owners/create', 'OwnerController@create');
+
+
