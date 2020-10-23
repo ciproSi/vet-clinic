@@ -18,6 +18,6 @@ class OwnerController extends Controller
 
 
 
-        return view('pets/pet', compact('owner'));
+        return view('owners/owner', compact('owner'));
     }
 }
