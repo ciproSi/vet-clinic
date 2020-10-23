@@ -21,7 +21,6 @@ class CreateOwnersTable extends Migration
             $table->string('street')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->unsignedBigInteger('pet_id');
             $table->timestamps();
         });
     }
