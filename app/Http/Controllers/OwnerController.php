@@ -23,5 +23,13 @@ class OwnerController extends Controller
 
         return view('owners.owner',compact('owner'));
     }
+
+
+    public function delete()
+    {
+        
+    }
+
+
     
 }
