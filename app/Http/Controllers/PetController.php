@@ -10,8 +10,8 @@ class Pets extends Controller
 {
     //
     public function index(){
-        $bookshops = Pets::get();
-        return view('pets/index', compact('bookshops'));
+        $pets = Pets::get();
+        return view('pets/index', compact('pets'));
     }
     public function create(){
         return view('pets/create');
