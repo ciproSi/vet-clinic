@@ -1,0 +1,17 @@
+1. all of us - download the json and pictures of animals (put it storage): /public/images
+2. make the script forimporting the data - one of us, rest will just run it to fill the db
+3. make Owner controller @ index (list of all owners) @ show (detail of of one owner) - one making model and one making view
+4. create view for homepage
+5. 
+
+
+controller@show + view for it - Hillen
+controller@index + view - Adam
+script for filling the db - Simon
+view for homepage - Radovan
+-- show all pets
+-- show all owners
+-- search for pet / owner
+-- buttons for create new owner / new pet
+-- show some pictures of pets
+
