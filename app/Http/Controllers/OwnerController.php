@@ -33,9 +33,7 @@ class OwnerController extends Controller
         
         $owner = Owner::with('pets')->findOrFail($id);
         
-
-
-        return view('owners.owner',compact('owner'));
+        return view('owners.owner', compact('owner'));
     }
 
 
@@ -44,6 +42,18 @@ class OwnerController extends Controller
         
     }
 
+    public function search(Request $request)
+    {
+        $search = '%' . $request->input('surname') . '%';
 
+        $owners = Owner::with('pets')->where('surname', 'like', $search)->get();
+
+        if ($owners->count() == 0) {
+            return redirect('/')->with('flash_message', 'Pet owner not found. Try different');    
+        } else {
+            return view('owners.search-result', compact('owners'));
+        }
+        
+    }
 
 }

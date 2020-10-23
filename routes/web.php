@@ -25,8 +25,9 @@ Route::get('/data-seeding', 'DataSeedingController@index');
 Route::get('/owners', 'OwnerController@index');
 Route::get('/owners/create', 'OwnerController@create');
 Route::get('/data-seeding', 'DataSeedingController@index');
-Route::get('/owner/{id}', 'OwnerController@show'); 
+Route::get('/owners/{id}', 'OwnerController@show'); 
 Route::get('/data-seeding', 'DataSeedingController@index');
 Route::get('/pets/{id}', 'PetController@show');
 Route::get('/pets', 'PetController@index');
-
+Route::post('/owners/search/', 'OwnerController@search');
+Route::post('/pets/search/', 'PetController@search');
