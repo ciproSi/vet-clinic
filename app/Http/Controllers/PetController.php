@@ -30,4 +30,18 @@ class PetController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+        $search = '%' . $request->input('pet') . '%';
+
+        $pets = Pet::with('owner')->where('name', 'like', $search)->get();
+
+        if ($pets->count() == 0) {
+            return redirect('/')->with('flash_message', 'Pet not found. Try different...');    
+        } else {
+            return view('pets.search-result', compact('pets'));
+        }
+        
+    }
+
 }

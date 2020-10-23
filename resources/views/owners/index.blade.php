@@ -1,6 +1,4 @@
-<style>
-    .owner {border-bottom: 2px solid grey;}
-</style>
+@extends('layouts.main', ['title' => 'List of all owners'])
 
 <a href="{{ action('OwnerController@create') }}">Create new Owner</a>
 
@@ -20,18 +18,41 @@
         <p>{{$owner->phone}}</p>
         <p>{{$owner->email}}</p>
 
-        <div class="pets">
-            @foreach ($owner->pets as $pet)
-                <div class="pet">
-                    {{$pet->name}}<br>
-                    {{$pet->breed}}
-                </div>
-            @endforeach
+@section('content')
+    
 
+@if (session()->get('flash_message'))
+        <div class="alert alert-success">
+            <h4>{{ session()->get('flash_message') }}</h4>
         </div>
-    </div>  
-    @endforeach
-</div>
+    @endif
+    <h1>List of all owners</h1>
+    
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>City</td>
+                <td>Street</td>
+                <td>Phone</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach ($owners as $owner)
+                    <tr>
+                        <td>{{$owner->name}} {{$owner->surname}}</td>
+                        <td>{{$owner->city}}</td>
+                        <td>{{$owner->street}}</td>
+                        <td>{{$owner->phone}}</td>
+                        <td>{{ $owner->email }}</td>
+                    </tr>
+                @endforeach
+        </tbody>
+    </table>
 
+    
+
+@endsection
 
 
