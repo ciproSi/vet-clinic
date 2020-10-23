@@ -30,14 +30,13 @@ class OwnerController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'surname' => 'required'
+            'surname' => 'required',
+            'email' => 'required'
         ]);
-
 
         $name = $request->input('name');
         $surname = $request->input('surname');
 
-        
         $existing_owner = Owner::where([
             ['name', '=', $name],
             ['surname', '=', $surname],
@@ -51,10 +50,12 @@ class OwnerController extends Controller
             $owner->street  = $request->input('street');
             $owner->phone  = $request->input('phone');
             $owner->email  = $request->input('email');
-    
             $owner->save();
-            return redirect(action('OwnerController@index'));
+
+            return redirect(action('OwnerController@index'))->with('flash_message', 'Saved!');
+
         } else {
+
             return redirect(action('OwnerController@index'))->with('flash_message', 'Owner is already in the DB!');
         }
 

@@ -1,6 +1,6 @@
 @extends('layouts.main', ['title' => 'List of all pets'])
+
 @section('content')
-    <a href="/" class="btn btn-primary">Home</a>
     <h1>List of pets</h1>
         <table class="table-striped">
             <thead>
