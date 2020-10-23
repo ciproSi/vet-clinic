@@ -1,18 +1,15 @@
-<h1> Owner Name </h1>
+
+ 
+ <h1>{{$owner->name }} {{$owner->surname }}</h1>
+ 
 
 
+<section>
+    <h2>Personal information </h2>
+     <p> City: {{$owner->city }}</p>
+     <p> Street: {{$owner->street }}</p>
+     <p>Telephone: {{$owner->phone }}</p>
+     <p>Email Address{{$owner->email }}</p>
+</section>
 
-<h1> image here </h1>
-
-
-
-
-<h1>Owner Name</h1>
-
-
-
-<p>Owner image </p>
-<p>Pet Name</p>
-<p>Phone number </p>
-<p>Address</p>
-<p>Email Address</p>
+ {{-- <p> {{$owners->pets }}</p> --}}
