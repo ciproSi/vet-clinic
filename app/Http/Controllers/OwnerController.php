@@ -18,8 +18,10 @@ class OwnerController extends Controller
         //use model to get id from database 
         
         $owner = Owner::with('pets')->findOrFail($id);
+        
 
 
         return view('owners.owner',compact('owner'));
     }
+    
 }
