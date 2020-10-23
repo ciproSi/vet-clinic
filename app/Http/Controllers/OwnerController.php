@@ -28,22 +28,39 @@ class OwnerController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'surname' => 'required'
+        ]);
+
+
+        $name = $request->input('name');
+        $surname = $request->input('surname');
+
         
-        $owner        = new Owner;
-        $owner->name  = $request->input('name');
-        $owner->surname  = $request->input('surname');
-        $owner->city  = $request->input('city');
-        $owner->street  = $request->input('street');
-        $owner->phone  = $request->input('phone');
-        $owner->email  = $request->input('email');
+        $existing_owner = Owner::where([
+            ['name', '=', $name],
+            ['surname', '=', $surname],
+        ])->value('name');
 
-        $owner->save();
-
-        //after storing new book we will redirect our user to action('BookController@index')
-        return redirect(action('OwnerController@index'));
+        if ($existing_owner == null) {
+            $owner        = new Owner;
+            $owner->name  = $request->input('name');
+            $owner->surname  = $request->input('surname');
+            $owner->city  = $request->input('city');
+            $owner->street  = $request->input('street');
+            $owner->phone  = $request->input('phone');
+            $owner->email  = $request->input('email');
+    
+            $owner->save();
+            return redirect(action('OwnerController@index'));
+        } else {
+            return redirect(action('OwnerController@index'))->with('flash_message', 'Owner is already in the DB!');
+        }
 
 
     }
+        
 
     public function  show($id){
 

@@ -1,5 +1,11 @@
 <h1>Create new owner</h1>
 <form action="{{ action('OwnerController@store') }}" method="post">
+    @if (count($errors) > 0)     
+    @foreach ($errors->all() as $error)        
+    <h4 class="alert alert-danger">{{ $error }}</h4>    
+    @endforeach
+    @endif
+    
     @csrf
     <p>
         <label for="name">Name:</label>
