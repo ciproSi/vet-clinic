@@ -23,7 +23,9 @@ Route::get('/', function () {
 
 Route::get('/data-seeding', 'DataSeedingController@index');
 Route::get('/owners', 'OwnerController@index');
+
 Route::get('/owners/create', 'OwnerController@create');
+Route::post('/owners', 'OwnerController@store');
 Route::get('/data-seeding', 'DataSeedingController@index');
 Route::get('/owner/{id}', 'OwnerController@show'); 
 Route::get('/data-seeding', 'DataSeedingController@index');

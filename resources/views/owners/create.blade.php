@@ -1,5 +1,5 @@
 <h1>Create new owner</h1>
-<form action="" method="post">
+<form action="{{ action('OwnerController@store') }}" method="post">
     @csrf
     <p>
         <label for="name">Name:</label>
