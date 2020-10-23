@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Pets;
+use App\Models\Owner;
+
 
 class OwnerController extends Controller
 {
@@ -10,14 +14,22 @@ class OwnerController extends Controller
 
     public function  show($id){
 
-        // $owner = $request->input('id');
-
+     
         //use model to get id from database 
+        
+        $owner = Owner::with('pets')->findOrFail($id);
+        
 
-       $owner =Owner::findOrFail($id);
 
-
-
-        return view('owners/owner', compact('owner'));
+        return view('owners.owner',compact('owner'));
     }
+
+
+    public function delete()
+    {
+        
+    }
+
+
+    
 }

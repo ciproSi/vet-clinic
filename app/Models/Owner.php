@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers;
 use App\Models\Pet;
 
 class Owner extends Model
@@ -14,4 +15,10 @@ class Owner extends Model
     {
         return $this->hasMany(Pet::class);
     }
+
+
+
+
 }
+
+

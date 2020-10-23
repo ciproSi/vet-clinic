@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Owner;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/data-seeding', 'DataSeedingController@index');
+=======
+Route::get('/owner/{id}', 'OwnerController@show'); 
+>>>>>>> Hilenn-Owner
