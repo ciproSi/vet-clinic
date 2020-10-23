@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/owners', 'ownerController@index');
+Route::get('/owners', 'OwnerController@index');
+
+Route::get('/owners/create', 'OwnerController@create');
+
+Route::post('/books', 'BookController@store');
