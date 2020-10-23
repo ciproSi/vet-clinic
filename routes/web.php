@@ -20,17 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+
 Route::get('/data-seeding', 'DataSeedingController@index');
 Route::get('/owners', 'OwnerController@index');
-
 Route::get('/owners/create', 'OwnerController@create');
-
-
-=======
-<<<<<<< HEAD
 Route::get('/data-seeding', 'DataSeedingController@index');
-=======
 Route::get('/owner/{id}', 'OwnerController@show'); 
->>>>>>> Hilenn-Owner
->>>>>>> c3870c299538a366c6adbc12692d6aa2556cce10
+Route::get('/data-seeding', 'DataSeedingController@index');
+Route::get('/pets/{id}', 'PetController@show');
+Route::get('/pets', 'PetController@index');
+

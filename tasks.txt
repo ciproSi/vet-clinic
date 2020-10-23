@@ -5,8 +5,17 @@
 5. 
 
 
-controller@show + view for it - Hillen
-controller@index + view - Adam
+OwnerController@show + view for it - Hillen - done
+Petcontroller@index + view - Adam - done
+
+
+OwnerContoller@index + view - Rada - done
+OwnerContoller@update - Rada
+Petcontroller@show + view - Simon - done
+PetController@update,create,store - Simon
+
+
+
 script for filling the db - Simon
 view for homepage - Radovan
 -- show all pets
