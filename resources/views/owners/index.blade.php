@@ -2,6 +2,8 @@
     .owner {border-bottom: 2px solid grey;}
 </style>
 
+<a href="{{ action('OwnerController@create') }}">Create new Owner</a>
+
 <div class="container">
     @foreach ($owners as $owner)
     <div class="owner">

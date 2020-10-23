@@ -7,8 +7,8 @@
     <title>vet-clinic homepage</title>
 </head>
 <body>
-    <a href="">Show all owners</a>
-    <a href="">Show all pets</a>
+    <a href="{{ action('OwnerController@index') }}">Show all owners</a>
+    <a href="{{ action('PetController@index') }}">Show all pets</a>
     <form action="" method="POST">
         @csrf
         <label for="surname">Search owner based to his surname:</label>
