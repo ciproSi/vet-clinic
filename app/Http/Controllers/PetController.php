@@ -11,7 +11,7 @@ class Pets extends Controller
     //
     public function index(){
         $pets = Pets::get();
-        return view('pets/index', compact('pets'));
+        return view('pets/index', compact('animals'));
     }
     public function create(){
         return view('pets/create');
